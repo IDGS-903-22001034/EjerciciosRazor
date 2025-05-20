@@ -1,0 +1,11 @@
+## Ignore Visual Studio temporary files and build outputs
+.vs/
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
+*.cache
+*.vsidx
+*.vspx
+*.vspscc
+*.sln.docstates

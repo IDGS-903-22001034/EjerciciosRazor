@@ -1,0 +1,30 @@
+﻿@page
+@model ExRazorPages.Pages.MensajeCifradoModel
+@{
+}
+<h1>Mensaje de Cifrado</h1>
+
+<form method="post">
+    <div>
+        <label>Mensaje:</label><br>
+        <textarea asp-for="texto" rows="3" cols="40"></textarea>
+    </div>
+
+    <div>
+        <label>Número de movimientos (n):</label><br>
+        <input type="number" asp-for="desplazamiento" min="1" max="24" value="3">
+    </div>
+
+    <div>
+        <button type="submit" name="Accion" value="Codificar">Codificar</button>
+        <button type="submit" name="Accion" value="Decodificar">Decodificar</button>
+    </div>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.resultado))
+{
+    <div>
+        <h3>Resultado:</h3>
+        <p>@Model.resultado</p>
+    </div>
+}

@@ -1,0 +1,57 @@
+﻿@page
+@model ExRazorPages.Pages.IgualdadModel
+@{
+}
+
+<h1>Mensaje de Cifrado</h1>
+
+<form method="post">
+
+    <div>
+        <label>Introduce el valor de a:</label><br>
+        <input type="number" asp-for="aUno" min="1" max="24">
+    </div>
+
+    <div>
+        <label>Introduce el valor de b:</label><br>
+        <input type="number" asp-for="bUno" min="1" max="24">
+    </div>
+
+    <div>
+        <label>Introduce el valor de x:</label><br>
+        <input type="number" asp-for="xUno" min="1" max="24">
+    </div>
+
+    <div>
+        <label>Introduce el valor de y:</label><br>
+        <input type="number" asp-for="yUno" min="1" max="24">
+    </div>
+
+    <div>
+        <label>Introduce el valor de n:</label><br>
+        <input type="number" asp-for="nUno" min="1" max="24">
+    </div>
+
+    <div>
+        <p><input type="submit" value="Calcular" /></p>
+    </div>
+    <div>
+        @if (Model.resultadoUno > 0)
+        {
+            <div>
+                <h3>(ax + by)ⁿ = @Model.resultadoUno</h3>
+                <h3>Suma de términos binomiales: @Model.resultadoDos</h3>
+
+                <h4>Desarrollo de la expansión:</h4>
+                <ul>
+                    @foreach (var termino in Model.Terminos)
+                    {
+                        <li>@termino</li>
+                    }
+                </ul>
+            </div>
+        }
+    </div>
+
+</form>
+

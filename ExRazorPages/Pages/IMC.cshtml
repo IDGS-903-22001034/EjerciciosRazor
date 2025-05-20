@@ -1,0 +1,60 @@
+﻿@page
+@model ExRazorPages.Pages.IMCModel
+@{
+}
+<h3>Cálculo de Indice de Masa Corporal (IMC)</h3>
+
+<form method="post">
+	<p>Dame tu peso (kg): <input type="number" step="0.01" asp-for="peso" /></p>
+	<p>Dame tu altura (mt): <input type="number" step="0.01" asp-for="altura" /></p>
+	<p><input type="submit" value="Calcular" /></p>
+
+	@if (Model.imc < 18)
+	{
+		<div>
+			<h3>IMC = @Model.imc</h3>
+			<h3>Peso Bajo</h3>
+			<img src="../img/peso_bajo.jpg" alt="Peso Bajo" style="width: 300px; height: auto;" />
+		</div>
+	}
+	else if(Model.imc >= 18 && Model.imc < 25)
+	{
+		<div>
+			<h3>IMC = @Model.imc</h3>
+			<h3>Peso Normal</h3>
+			<img src="../img/peso_normal.jpg" alt="Peso Normal" style="width: 300px; height: auto;" />
+		</div>
+	}
+	else if (Model.imc >= 25 && Model.imc < 27)
+	{
+		<div>
+			<h3>IMC = @Model.imc</h3>
+			<h3>Sobre Peso</h3>
+			<img src="../img/sobre_peso.jpeg" alt="Sobre Peso" style="width: 300px; height: auto;" />
+		</div>
+	}
+	else if (Model.imc >= 27 && Model.imc < 30)
+	{
+		<div>
+			<h3>IMC = @Model.imc</h3>
+			<h3>Obesidad grado 1</h3>
+			<img src="../img/obesidad_uno.jpg" alt="Obesidad grado 1" style="width: 300px; height: auto;" />
+		</div>
+	}
+	else if (Model.imc >= 30 && Model.imc < 40)
+	{
+		<div>
+			<h3>IMC = @Model.imc</h3>
+			<h3>Obesidad grado 2</h3>
+			<img src="../img/obesidad_dos.jpg" alt="Obesidad grado 2" style="width: 300px; height: auto;" />
+		</div>
+	}
+	else if (Model.imc >= 40)
+	{
+		<div>
+			<h3>IMC = @Model.imc</h3>
+			<h3>Obesidad grado 3</h3>
+			<img src="../img/obesidad_tres.jpg" alt="Obesidad grado 3" style="width: 300px; height: auto;" />
+		</div>
+	}
+</form>

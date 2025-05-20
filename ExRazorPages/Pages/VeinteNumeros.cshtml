@@ -1,0 +1,26 @@
+﻿@page
+@model ExRazorPages.Pages.VeinteNumerosModel
+@{
+}
+
+
+<h3>Arreglo original:</h3>
+@if (Model.numeros != null && Model.numeros.Length > 0)
+{
+    <p>@string.Join(", ", Model.numeros)</p>
+
+    <h3>Arreglo ordenado:</h3>
+    int[] copiaOrdenada = (int[])Model.numeros.Clone();
+    Array.Sort(copiaOrdenada);
+    <p>@string.Join(", ", copiaOrdenada)</p>
+}
+
+<h3>Suma: @Model.sumaT</h3>
+<h3>Media o Promedio: @Model.prom</h3>
+<h3>Moda: @Model.modaR</h3>
+<h3>Mediana: @Model.mediana</h3>
+
+
+<form method="post">
+    <button type="submit">Generar números</button>
+</form>
